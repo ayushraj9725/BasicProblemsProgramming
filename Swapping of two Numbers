@@ -1,0 +1,44 @@
+Problem : Swapping of two number
+
+
+package Basics.BasicConditioanlProblems;
+
+import java.util.Scanner;
+
+public class swapTwoNumbers {
+
+    static void swapingTwoNumbers(int a ,int b){
+        // a = 9 , b = 6
+        // a = 6 , b = 9
+
+        int temp = a ;
+        a = b ;
+        b = temp ;
+
+        System.out.println("our swap values is here " + a + " and "+b);
+
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number");
+        int a = sc.nextInt();
+        System.out.println("Enter b number");
+        int b = sc.nextInt();
+
+        // here we are trying to make you understand how a function helps you to do task in easy way
+        // multiple types you want to perform swapping, but you can't write block of code(similar) over and over again to perform multiple time
+        // here function provide the reusability make work for you to reduce your efforts
+
+        swapingTwoNumbers(a,b);
+
+        swapingTwoNumbers(3,6);
+
+        /// //
+        swapingTwoNumbers(7,8);
+
+        /// /
+        swapingTwoNumbers(9,10);
+    }
+
+}
