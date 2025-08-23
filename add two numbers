@@ -1,0 +1,40 @@
+problem : add two numbers 
+
+package Basics.BasicConditioanlProblems;
+
+import java.util.Scanner;
+
+public class addTwoNumbers {
+
+    // instance method
+    public int addingTwoNumbers(int a , int b){
+        return a+b ;
+    }
+
+    // Static Method
+    public static int addNumbers(int a ,int b){
+        return a+b ;
+    }
+
+    public static void main(String[] args){
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter first number");
+        int a = input.nextInt();
+        System.out.println("Enter Second number");
+        int b = input.nextInt();
+
+        // adding two numbers using instance method, calling method by making object of class (using instance)
+        addTwoNumbers add = new addTwoNumbers();
+        int result = add.addingTwoNumbers(a,b);
+        System.out.println("The result is : "+result + " using instance method");
+
+        // adding two numbers using the static method
+        int ans = addNumbers(a,b);
+        System.out.println("The result is : "+ans + " using static method");
+
+
+
+    }
+
+}
