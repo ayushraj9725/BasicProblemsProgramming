@@ -1,0 +1,36 @@
+problem : find simple interest 
+
+Solution : 
+
+package Basics.BasicConditioanlProblems;
+
+import java.util.Scanner;
+
+public class SimpleInterestCalculate {
+
+//  Given three integers p, r and t, denoting Principal, Rate of Interest and Time period respectively.
+//  Your task is to calculate Simple Interest.
+
+    public static void calculateInterest(float p , float r ,float t){
+
+        float interest = (p * r * t) / 100 ;
+
+        System.out.println("The interest is "+interest);
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the principle : ");
+        float principle = sc.nextFloat();
+        System.out.println("Enter the rate ");
+        float rate = sc.nextFloat();
+        System.out.println("Enter the time :");
+        float time = sc.nextFloat();
+
+
+        calculateInterest(principle,rate,time);
+
+    }
+
+}
