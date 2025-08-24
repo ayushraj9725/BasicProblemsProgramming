@@ -1,0 +1,56 @@
+problem : find largest among three numbers
+
+solution : 
+
+package Basics.BasicConditioanlProblems;
+
+import java.util.Scanner;
+
+public class largestThreeNum {
+
+    int largestNumber(int a , int b , int c){
+        return ((a > b ? a : b) > c) ? a : (b > c ? b : c);
+    }
+
+    int largestNumber1(int a , int b , int c){
+        return ((Math.max(a, b)) > c) ? a : (Math.max(b, c));
+    }
+
+    int largestNumber2(int a , int b , int c){
+        if(a > b){
+            if(a > c){
+                return a ;
+            }
+            else{
+                return c ;
+            }
+        }else{
+            if(b > c){
+                return b ;
+            }else {
+                return c ;
+            }
+        }
+    }
+
+
+    public static void main(String[] args){
+        largestThreeNum l = new largestThreeNum();
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the first number: ");
+        int a = sc.nextInt();
+        System.out.println("Enter the second number: ");
+        int b = sc.nextInt();
+        System.out.println("Enter the third number: ");
+        int c = sc.nextInt();
+
+        // using method 1 largestNumber
+        System.out.println("Largest num : "+l.largestNumber(a,b,c));
+        // using method 2 largerNumber1
+        System.out.println("Largest num : "+l.largestNumber1(a,b,c));
+        // using method 3 largestNumber2
+        System.out.println("Largest num : "+l.largestNumber2(a,b,c));
+
+    }
+}
