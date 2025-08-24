@@ -1,0 +1,33 @@
+Problem :convert celsius to fahrenheit 
+
+
+solution : 
+
+package Basics.BasicConditioanlProblems;
+
+import java.util.Scanner;
+
+public class convertCtoF {
+
+    public float convertCelsiusToFahrenheit(float celsius){
+        float fahrenheit = 0 ;
+        fahrenheit = (celsius * 9/5) + 32 ;
+
+        return fahrenheit ;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the temperature in celsius: ");
+        float celsius = input.nextFloat();
+
+        convertCtoF obj =new convertCtoF();
+
+        float fahrenheit = obj.convertCelsiusToFahrenheit(celsius);
+
+        System.out.println("The temperature in fahrenheit is "+fahrenheit);
+
+    }
+
+}
