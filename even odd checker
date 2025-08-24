@@ -1,0 +1,33 @@
+Problem : Even Odd checker 
+
+
+solution : 
+
+package Basics.BasicConditioanlProblems;
+
+public class evenOdd {
+
+    public boolean evenOrOdd(int n){
+        if(n % 2 == 0){
+            return true ;
+        }
+        return false ;
+
+        // return (n % 2 == 0) ? true : false ;
+    }
+
+    public static void main(String[] args) {
+        evenOdd evenOdd = new evenOdd();
+
+        int n = 9 ;
+
+        boolean flag = evenOdd.evenOrOdd(n);
+
+        if(flag){
+            System.out.println("Number is even");
+        }else{
+            System.out.println("Number is odd");
+        }
+
+    }
+}
