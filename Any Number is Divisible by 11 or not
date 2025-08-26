@@ -1,0 +1,73 @@
+Problem : Any Number is Divisible by 11 or not
+
+Solution : 
+
+package Basics.BasicConditioanlProblems;
+
+public class DivisibleByEleven {
+
+    public static boolean divisibleByEleven(String s){
+
+        int num = Integer.parseInt(s); //
+
+        if(num % 11 == 0){
+            return true ;
+        }
+
+        return false ;
+    }
+
+    // 7 3 8 3 7 2 8
+    // sum of digits who at even place = 2 + 3 + 3 = 8
+    // sum of digits who at odd place = 8 + 7 + 8 + 7 = 30
+    // 30 - 8 = 22 , ( 22 % 11  == 0 ) ? true : false
+
+    public static boolean isDivisible(String s){
+
+        int n = s.length();
+        int evenSum = 0 ;
+        int oddSum = 0 ;
+        // calculate sum at even digit
+        for(int i = 0 ; i < n ; i++){
+            if(i % 2 == 0){
+                evenSum = evenSum + (s.charAt(i) - '0');
+            }
+            else{
+                oddSum = oddSum + (s.charAt(i) - '0');
+            }
+        }
+
+        int diff = Math.abs(evenSum - oddSum);
+
+        if(diff % 11 == 0){
+            return true ;
+        }
+
+        return false ;
+    }
+
+    public static void main(String[] args) {
+
+        String s = "7383728" ;
+
+        // is this number stored in s is divisible by 11 or not, we have to identify ! how i know ?
+
+        // 76895 % 11 == 0 or not in the form of true or false
+
+        if(divisibleByEleven(s)){
+            System.out.println("Yes it is divisible b 11 ");
+        }
+        else{
+            System.out.println("Not it is not divisible by 11");
+        }
+
+
+        // using optimal approach
+        if(isDivisible(s)){
+            System.out.println("Yes again divisible by 11");
+        }else{
+            System.out.println("Not divisible by 11");
+        }
+    }
+
+}
