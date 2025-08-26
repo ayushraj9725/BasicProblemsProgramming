@@ -1,0 +1,68 @@
+Problem  : Root of Quadratic Equation
+
+Solution : 
+
+package Basics.BasicConditioanlProblems;
+
+import java.util.Scanner;
+
+import static java.lang.Math.abs;
+
+public class QuadraticRoot {
+
+    public static void QuadraticRootFinder(double a, double b, double c){
+        if (a == 0) {
+            System.out.println("Invalid");
+            return;
+        }
+
+        double d = b * b - 4 * a * c;
+        double sqrt_val = Math.sqrt(abs(d));
+
+        if (d > 0) {
+            System.out.println("Roots are real and different \n");
+
+            System.out.println(
+                    (double)(-b + sqrt_val) / (2 * a) + "\n"
+                    + (double)(-b - sqrt_val) / (2 * a));
+
+        }
+        else if (d == 0) {
+            System.out.println("Roots are real and same \n");
+
+            System.out.println(-(double)b / (2 * a) + "\n"
+                    + -(double)b / (2 * a));
+        }
+        else // d < 0
+        {
+            System.out.println("Roots are complex \n");
+
+            System.out.println(-(double)b / (2 * a) + " + i"
+                    + sqrt_val / (2 * a) + "\n"
+                    + -(double)b / (2 * a)
+                    + " - i"
+                    + sqrt_val / (2 * a));
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        // ax^2 + bx + c = 0
+        // here you have three quadratic constants a b and c
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the a : ");
+        double a = input.nextDouble();
+
+        System.out.println("Enter the b : ");
+        double b = input.nextDouble();
+
+        System.out.println("Enter the c : ");
+        double c = input.nextDouble();
+
+        // we are calling this method to print the root of quadratic equation making with these constants
+        QuadraticRootFinder(a,b,c);
+
+    }
+
+}
