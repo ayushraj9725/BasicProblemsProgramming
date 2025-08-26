@@ -1,0 +1,58 @@
+Problem : Grade calculator based on marks
+
+Solution : 
+
+package Basics.BasicConditioanlProblems;
+import java.util.Scanner;
+
+// Problem: Take marks of 5 subjects and find the grade 'A' when percentage is 90 and more than 90,
+//          'B' when 80 and more than 80 but below 90 (till 89), 'C' when percentage in between 60 and 79
+//          'D' when percentage is equal to more than 33 and below 60, but if it goes below 33 grade here 'F'
+
+public class BasicGradeCalculator {
+
+    public static char GradeCalculator(float percentage){
+
+        if(percentage >= 90){
+            return 'A' ;
+        }
+        else if(percentage >= 80){
+            return 'B';
+        }
+        else if(percentage >= 60){
+            return 'C';
+        }
+        else if(percentage >= 33){
+            return 'D';
+        }
+
+        return 'F' ;
+
+    }
+
+    public static void main(String[] args){
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the marks of student obtained in 1st subject : ");
+        float s1 = input.nextFloat();
+        System.out.println("Enter the marks of student obtained in 2nd subject : ");
+        float s2 = input.nextFloat();
+        System.out.println("Enter the marks of student obtained in 3rd subject : ");
+        float s3 = input.nextFloat();
+        System.out.println("Enter the marks of student obtained in 4th subject : ");
+        float s4 = input.nextFloat();
+        System.out.println("Enter the marks of student obtained in 5th subject : ");
+        float s5 = input.nextFloat();
+
+        // find percentage in the very first step
+        float percentage = (s1 + s2 + s3 + s4 + s5) / 5 ; // find overall percentage
+
+        // although you can try this formula per = (total obtained marks / maximum marks can get) * 100, where max marks = 500 because one subject is of 100 marks then 5 for 500
+
+        char grade = GradeCalculator(percentage);
+
+        System.out.println("The grade of the student is : "+grade);
+
+    }
+
+}
