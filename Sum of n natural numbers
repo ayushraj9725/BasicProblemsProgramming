@@ -1,0 +1,52 @@
+Problem : Sum of N natural numbers 
+
+Problem Statement : find the sum of n natural number means , start from 1 and keeping adding numbers until you reach to the number .
+
+Problem Solution : JAVA
+
+
+**************** // *********************************************************************** // ************************************************************************ // **************** 
+
+package Basics.LoopProblems;
+import java.util.Scanner;
+
+public class SumOfNNumber {
+
+    public static int findSum(int n){
+        int sum = 0 ;
+        for(int i = 1 ; i <= n ; i++){
+            sum = sum + i ;
+        }
+        return sum ;
+    }
+
+    public static int DirectUsingFormula(int n){
+        return n * (n + 1) / 2 ;  //
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter any number : ");
+
+        int n = sc.nextInt();
+
+        int sum = findSum(n);
+        System.out.println("The sum is : "+sum);
+
+        int sum2 = DirectUsingFormula(n);
+        System.out.println("The sum is : "+sum2);
+
+    }
+
+    // n = 100 
+
+     TIME COMPLEXITY : O(N) and SPACE COMPLEXITY : O(1) 
+     
+}
+
+
+// ****************************************************************** // *************************************************************************** // ************************************************************ // 
+
+
+
