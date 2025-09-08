@@ -1,0 +1,109 @@
+Problem : Sum of first k natural number in N
+
+Problem Statement : 
+Given N, find s such that sum of first s natural number is N.
+ 
+
+Example 1:
+Input: N = 10
+Output: 4
+Explanation: Sum of first 4 natural
+number is 1 + 2 + 3 + 4 = 10.     
+
+Example 2:
+Input: N = 17
+Output: -1
+Explanaion: There is no such number.
+
+
+
+/******************************  SOLUTION JAVA ******************************************/
+
+
+package Basics.LoopProblems;
+
+import java.util.Scanner;
+
+public class NSumNatural {
+
+    public static int findSum(int n) {
+        // code here
+        //  1 - + 2 + 3 + 4 ----->   n is equal to n or not ( each time perform and check)
+
+        int sum = 0 ;
+        int count = 0 ;
+        int i = 1 ;
+
+        // sum = 0 + 1 = 1 ,
+        // count = 0+1 ;
+        // if(sum == n) break ;
+
+        while(i <= n){
+            sum = sum + i ;
+            count++ ;
+            if(sum == n) break ;
+            i++;
+        }
+
+        return (i == n+1) ? -1 : count ;
+
+        // but this method taking O(N) time that is to much: it is a Naive approach (Brute Force)
+    }
+
+    public static int findBetter(int n) {
+
+        int sum = 0 ;
+        int count = 0 ;
+        int i = 1 ;
+
+        // sum = 0 + 1 = 1,
+        // count = 0+1 ;
+        // if(sum == n) break ;
+
+        while(i <= n){
+            sum = sum + i ;
+            count++ ;
+            if(sum >= n) break ;
+            i++;
+        }
+
+        return (sum > n) ? -1 : count ;
+
+        // it is taking time some whare n/2 approx
+    }
+
+    public static int optimal(int n){
+        return n;
+    }
+
+    public static int findSumm(int n){
+        int sum = 0 ;
+        for(int i = 1 ; sum < n ;i++){
+            sum += i ;  // sum = sum + i
+            if(sum == n) return i ;
+        }
+        return -1 ;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter any number : ");
+
+        int n = sc.nextInt();
+
+        int num1 = findSum(n);
+        System.out.println("The number of natural number required to find sum of n is : "+num1);
+
+        int num2 = findBetter(n);
+        System.out.println("The number of natural number required to find sum of n is : "+num2);
+
+        int num3 = findSumm(n);
+        System.out.println("num3 : "+num3);
+
+    }
+
+}
+
+
+/*************************************************************************************************************************************/
