@@ -1,0 +1,70 @@
+Problem : ArmStrong Number in Range
+
+Statement : 
+Given two integer inputs as high and low, the objective is to find all the Armstrong Numbers that falls under the limits [Low,High] interval.
+Before Going into the Explanation let’s understand the problem and the definition of Armstrong Numbers.
+
+Example 1
+Input : 120
+Output : No
+120 is not a Armstrong number.
+1*1*1 + 2*2*2 + 0*0*0 = 9
+
+Example 2
+Input : 1253
+Output : No
+1253 is not a Armstrong Number
+1*1*1*1 + 2*2*2*2 + 5*5*5*5 + 3*3*3*3 = 723
+
+
+Problem Solution :  IN JAVA 
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        // printing armstrong number in range
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the start point : ");
+        int start = sc.nextInt();
+        System.out.println("Enter the end point : ");
+        int end = sc.nextInt();
+        
+        for(int num = start ; num <= end ; num++){
+            int temp = num ;
+            int digit_sum = 0;
+            int power = getOrder(num);
+            while(temp != 0){
+                int d = temp % 10 ;
+                digit_sum += (int)Math.pow(d,power) ;
+                temp = temp / 10 ;
+            }
+            // if the num and digit both are equal then the current number will be armstrong number now we can print this
+            if(digit_sum == num){
+                System.out.print(num + " ");
+            }
+            
+        }
+    }
+    public static int getOrder(int num){
+        int power = 0 ;
+        while(num != 0){
+            power++;
+            num = num / 10 ;
+        }
+        return power ;
+    }
+}
+
+
+///// OUTPUT /////
+
+Enter the start point : 
+1
+Enter the end point : 
+10000
+1 2 3 4 5 6 7 8 9 153 370 371 407 1634 8208 9474 
+
+=== Code Execution Successful ===
+
