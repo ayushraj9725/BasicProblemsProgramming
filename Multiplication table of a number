@@ -1,0 +1,54 @@
+Problem : Multiplication table of a number 
+
+Problem statement : 
+Create the multiplication table from 1 to 10 for a given number n and return the table as an array.
+
+Examples:
+Input: n = 9
+Output: 9 18 27 36 45 54 63 72 81 90
+
+Input: n = 2
+Output: 2 4 6 8 10 12 14 16 18 20
+
+Constraints: 
+1 <= N <= 106
+
+//////////////////  PROBLEM SOLUTION ////////////////   TIME COMP : O(10) & SPACE : O(10) , considered as O(1) and space also because 10 size array used to return answer 
+
+C++ SOLUTION  
+
+// User function Template for C++
+class Solution {
+  public:
+    vector<int> getTable(int n) {
+        // Write Your Code here
+        vector<int> ans ;
+        
+        for(int i = 1 ; i <= 10 ; i++){
+            int value = i * n ;
+            ans.push_back(value);
+        }
+        
+        return ans ;
+    }
+};
+
+JAVA SOLUTION 
+
+// User function Template for Java
+class Solution {
+    static ArrayList<Integer> getTable(int n) {
+        // code here
+        
+        ArrayList<Integer> ans = new ArrayList<>();
+        
+        for(int i = 1 ; i <= 10 ; i++){
+            int value = i * n ;
+            ans.add(value);
+        }
+        
+        return ans ;
+        
+    }
+}
+
