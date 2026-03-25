@@ -1,0 +1,176 @@
+Problem : Find GCD of Two Number
+
+Problem Statement :
+
+Given two positive integers a and b, find GCD of a and b.
+
+Note: Don't use the inbuilt gcd function
+
+Examples:
+Input: a = 20, b = 28
+Output: 4
+Explanation: GCD of 20 and 28 is 4
+
+Input: a = 60, b = 36
+Output: 12
+Explanation: GCD of 60 and 36 is 12
+
+Constraints:
+1 ≤ a, b ≤ 109
+
+Expected Complexities
+Time Complexity: O(log(min(a, b)))
+
+Auxiliary Space: O(1)
+Company Tags : Accenture , TCS
+
+
+Problem SOlution : 
+
+class Solution {
+  public:
+    int gcd(int a, int b) {
+        // code here
+        
+        // brute force approach start from 1 to go till min of a and b , ther after perform operation
+        
+        // better approach stat from min of a and b , ther after perform operation 
+        
+        int m = min(a,b);
+        
+        for(int i = m ; i >= 0 ; i--)
+        {
+            if(a % i == 0 && b % i == 0){
+                return i;
+            }
+            
+        }
+        
+        return m;
+        
+    }
+};
+
+
+//// JAVA  ////
+
+class Solution {
+  public static int gcd(int a, int b) {
+        // code here
+        
+        // brute force approach start from 1 to go till min of a and b , ther after perform operation
+        
+        // better approach stat from min of a and b , ther after perform operation 
+        
+        int m = min(a,b);
+        
+        for(int i = m ; i >= 0 ; i--)
+        {
+            if(a % i == 0 && b % i == 0){
+                return i;
+            }
+            
+        }
+        
+        return m;
+        
+    }
+}
+
+
+/// OPTIMAL SOLUTION ///  USING Ecludian Algorithm to find gcd using recursion 
+
+class Solution {
+  public:
+    int gcd(int a, int b) {
+        // code here
+      
+      if(a == 0){
+          return b ;
+      }
+      if(b == 0){
+          return a ;
+      }
+      if(a == b){
+          return a ;
+      }
+      
+      if(a > b){
+         return gcd(a-b,b) ; // subtract b from a 
+      }
+      
+      // otherwise a from b
+        
+      return gcd(a,b-a);
+      
+    }
+};
+
+//// JAVA ////
+
+class Solution {
+  public static int gcd(int a, int b) {
+        // code here
+      
+      if(a == 0){
+          return b ;
+      }
+      if(b == 0){
+          return a ;
+      }
+      if(a == b){
+          return a ;
+      }
+      
+      if(a > b){
+         return gcd(a-b,b) ; // subtract b from a 
+      }
+      
+      // otherwise a from b
+        
+      return gcd(a,b-a);
+      
+    }
+}
+
+//// NORMAL WAY ////
+
+class Solution {
+  public:
+    int gcd(int a, int b) {
+        // code here
+        
+    // Continue loop as long as both
+    // a and b are greater than 0
+    while(a > 0 && b > 0) {
+        // If a is greater than b,
+        // subtract b from a and update a
+        if(a > b) {
+             // Update a to the remainder
+             // of a divided by b
+            a = a % b;
+        }
+        // If b is greater than or equal
+        // to a, subtract a from b and update b
+        else {
+            // Update b to the remainder
+            // of b divided by a
+            b = b % a; 
+        }
+    }
+    // Check if a becomes 0,
+    // if so, return b as the GCD
+    if(a == 0) {
+        return b;
+    }
+    // If a is not 0,
+    // return a as the GCD
+    return a;
+      
+    }
+};
+
+
+
+
+
