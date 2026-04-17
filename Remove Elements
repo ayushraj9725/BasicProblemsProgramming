@@ -1,0 +1,26 @@
+Problem : Remove Elements
+
+Problem Statement : 
+
+You can find the statement here : "https://leetcode.com/problems/remove-element/description/"
+
+Problem Solution : O(N) time and O(1) space 
+
+/// C++ ///
+
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+        
+        int i = 0 ;
+
+        for(int j = 0 ; j < nums.size() ; j++){
+           if(nums[j] != val){
+              nums[i] = nums[j];
+              i++ ;
+           }
+        }
+        
+        return i ;
+    }
+};
