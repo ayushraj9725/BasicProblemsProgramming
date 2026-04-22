@@ -1,0 +1,69 @@
+Problem : Move Zeros
+
+Problem Statement : 
+Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+Note that you must do this in-place without making a copy of the array.
+
+Example 1:
+Input: nums = [0,1,0,3,12]
+Output: [1,3,12,0,0]
+
+Example 2:
+Input: nums = [0]
+Output: [0]
+
+Constraints:
+1 <= nums.length <= 104
+-231 <= nums[i] <= 231 - 1
+
+
+/************************************** PROBLEM SOLUTION ********************************/
+
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        
+        int i = 0 ;
+
+        for(int j = 0 ; j < nums.size() ; j++){
+            if(nums[j] != 0){
+                nums[i] = nums[j];
+                i++;
+            }
+        }
+
+        while(i < nums.size()){
+            nums[i] = 0 ;
+            i++;
+        }
+
+    }
+};
+
+/*************************************** JAVA ***********************************/
+
+class Solution {
+    public static int[] check(int nums[]){
+         int n = nums.length ;
+        int j = -1 ; //to avoid the indexoutofbaound we fix 0 ,otherwise here shoud be -1 in return case and we have to return after this for loop execution if(j ==-1) return a ;
+       for(int i = 0 ; i < n ; i++){ // O(x) time taken
+           if(nums[i] == 0){
+               j = i ;
+               break;
+           }
+       }
+       if(j == -1 ) return nums ; // return that given arr if any 0 not found 
+       for(int i = j+1 ;i < n  ;i++){  // O(n-x) time taken
+           if(nums[i] != 0){
+               int temp = nums[i];
+               nums[i] = nums[j] ;
+               nums[j] = temp ;
+               j++ ;
+           }
+       } 
+       return nums ; // over all time takne O(n) and space O(1)
+    }
+    public void moveZeroes(int[] nums) {
+        check(nums) ;
+    }
+}
